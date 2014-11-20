@@ -19,7 +19,7 @@ echo $form->handle (function ($form) {
 	
 	echo $tpl->render (
 		$this->app . '/admin/unserialize',
-		array ('phpdata' => $phpdata, 'result' => $result)
+		array ('phpdata' => $phpdata, 'result' => print_r ($result, true))
 	);
 
 	$form->controller->add_notification ( __ ('Data unserialized'));

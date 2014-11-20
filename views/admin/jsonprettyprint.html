@@ -1,0 +1,22 @@
+<div class="form">
+
+	<form method="post" id="{{_form}}">
+		
+		<div>
+			<label for="jsondata">{"PHP data"}</label>
+			<textarea name="jsondata" id="jsondata" rows="10">{{jsondata}}</textarea>
+		</div>
+		<h4></h4>
+		<div>
+			<input type="submit" value='{"Pretty print JSON"}' />
+			&nbsp;
+			<a href="/{{controller.app}}/admin">{"Cancel"}</a>
+		</div>
+		
+	</form>
+	
+	<h4>{"JSON pretty printed"}</h4>
+	<label for="result">{"Result"}</label>
+	<textarea id="result" rows="10">{{result}}</textarea>
+		
+</div>

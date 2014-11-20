@@ -1,0 +1,22 @@
+<div class="form">
+
+	<form method="post" id="{{_form}}">
+		
+		<div>
+			<label for="phpdata">{"PHP data"}</label>
+			<textarea name="phpdata" id="phpdata" rows="10">{{phpdata}}</textarea>
+		</div>
+		<h4></h4>
+		<div>
+			<input type="submit" value='{"Serialize"}' />
+			&nbsp;
+			<a href="/{{controller.app}}/admin">{"Cancel"}</a>
+		</div>
+		
+	</form>
+	
+	<h4>{"Serialized data"}</h4>
+	<label for="result">{"Result"}</label>
+	<textarea id="result" rows="10">{{result}}</textarea>
+	
+</div>

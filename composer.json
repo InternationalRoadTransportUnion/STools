@@ -1,0 +1,23 @@
+{
+	"name": "elefant/app-stools",
+	"type": "elefant-app",
+	"description": "Support Tools for the Elefant CMS",
+	"keywords": ["tools", "serialize", "unserialize", "prety print"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Oleg Ivanchenko",
+			"email": "oleg.ivanchenko@iru.org",
+			"homepage": "https://it-digest.info/apps/stools"
+		}
+	],
+	"repositories": [
+		{
+			"type": "git",
+			"url": "https://github.com/InternationalRoadTransportUnion/STools.git"
+		}
+	],
+	"require": {
+		"elefant/app-installer": "*"
+	}
+}

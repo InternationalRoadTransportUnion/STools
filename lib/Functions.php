@@ -63,3 +63,32 @@ function pretty_json ($json) {
 	}
 	return $result;
 }
+
+/**
+ * Sanitizes data for serialize.
+ * 
+ * @param string $phpdata
+ * @return boolean
+ */
+function sanitize_phpdata ($phpdata) {
+
+	$return = true;
+	if (($tokens = token_get_all ($phpdata))) {
+		foreach ($tokens as $token) {
+			if (is_array ($token)) {
+				switch ($token[0]) {
+					case T_ARRAY:
+					case T_CHARACTER:
+					case T_DNUMBER:
+					case T_INLINE_HTML:
+					case T_LNUMBER:
+					case T_STRING_VARNAME:
+						break;
+					default:
+						$return = false;
+				}
+			}
+		}
+	}
+	return $return;
+}

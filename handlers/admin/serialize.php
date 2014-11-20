@@ -1,5 +1,7 @@
 <?php
 
+require_once 'apps/' . $this->app . '/lib/Functions.php';
+
 $this->require_admin ();
 
 $page->layout = 'admin';
@@ -15,7 +17,11 @@ echo $form->handle (function ($form) {
 	global $tpl;
 	
 	$phpdata = filter_input (INPUT_POST, 'phpdata');
-	$result = serialize ($phpdata);	
+	if (Stools\sanitize_phpdata ($phpdata)) {
+		$result = serialize (eval ('return ' . $phpdata));
+	} else {
+		$result = '';
+	}
 	
 	echo $tpl->render (
 		$this->app . '/admin/serialize',
